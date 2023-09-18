@@ -1,5 +1,30 @@
 ---
+import '../styles/global.css'
+const pageTitle = "About";
 
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript"
+];
+
+const hobbies = [
+    "Sleeping", 
+    "Learning new things", 
+    "Reading"
+];
+
+const identity = {
+    firstName: "Aye Mon",
+    hobbies: hobbies,
+    skills: skills
+};
+
+const busy = false;
+
+const skillColor = "";
+const fontWeight = "";
+const textCase = "capitalize";
 ---
 
 <html lang="en">
@@ -8,7 +33,14 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
 	</head>
 	<body>
         <header>
@@ -19,16 +51,32 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/blog">Blog</a>
-                    <ul>
-                        <li><a href="/posts/post-1">Post 1</a></li>
-                    </ul>
                 </li>
             </ul>
         </nav>
         <main>
             <h1>About me</h1>
-            <h2>...and this blog</h2>
-            <p>Hello, I'm Aye Mon. This blog will grow over time but now it's a work in progress!</p>    
+            <section>
+                {busy ? <p>I'm busy at the moment!</p> : <p>I'm avaliable!</p>}
+            </section>
+            <section>
+                <h2>Get to know me!</h2>
+                <p>My name is {identity.firstName}.</p>
+                <p>Things I like to do in free time:</p>
+                <ul>
+                    {identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+                </ul>
+                <p>I know how to write:</p>
+                <ul>
+                    {identity.skills.map((skill) => <li class="skill">{skill}</li>)}
+                </ul>
+            </section>
+            <section>
+                <h2>Lorem Ipsum Paragraphs</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis risus quam, sit amet tempor justo consequat sed. Morbi porttitor est vitae finibus sagittis. Phasellus arcu neque, egestas et eros quis, hendrerit porttitor dolor. Vivamus viverra ante odio, non vestibulum mi congue ut. Duis sodales placerat felis quis commodo. Integer sit amet sem maximus, sollicitudin arcu at, consequat lectus. Phasellus non quam in velit vulputate finibus non eget lectus. Praesent imperdiet rutrum turpis, eget ultricies elit pretium et. Mauris consectetur porttitor mi, suscipit faucibus augue aliquet sagittis. Etiam nec iaculis sapien. Vestibulum quis orci hendrerit lacus sagittis suscipit. Cras sollicitudin nisl a nunc varius mattis. Vivamus dignissim diam aliquam, elementum risus et, feugiat dolor. Aenean sit amet dui consequat, finibus dolor ac, accumsan nulla.
+<br>
+Aliquam sodales, nisl ac vestibulum laoreet, justo lorem pharetra nunc, at facilisis risus tortor vel purus. Vestibulum volutpat dolor at tellus blandit congue. Aliquam libero ligula, mattis ac pulvinar eu, auctor a erat. Donec non tristique mauris. Nulla eget mollis metus. Vivamus euismod dapibus magna, non dapibus nisl dictum ut. Nullam maximus eros ut justo egestas, quis dignissim risus rutrum. Ut laoreet nunc accumsan dui bibendum, id rhoncus tellus dignissim. Ut quis nunc vel velit commodo commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida dui augue, nec rhoncus libero dignissim vitae. Duis vitae sodales ipsum. Duis ullamcorper neque eget varius iaculis. Proin id posuere nisl, sed auctor sem. Quisque ultricies neque magna, non pellentesque erat placerat vitae. In condimentum vitae lorem et fermentum.</p>
+            </section>
         </main>
         <footer>
 

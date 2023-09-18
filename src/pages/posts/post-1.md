@@ -5,6 +5,10 @@ description: 'Writing a blog with Astro'
 author: ''
 ---
 
+- [Home](/)
+- [About](/about)
+- [Blog](/blog)
+
 ## First post on this blog
 
 I wrote a post!
