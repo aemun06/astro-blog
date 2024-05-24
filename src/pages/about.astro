@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
 const pageTitle = "About";
 
 const skills = [
@@ -46,14 +49,7 @@ const textCase = "capitalize";
         <header>
 
         </header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/blog">Blog</a>
-                </li>
-            </ul>
-        </nav>
+        <Header></Header>
         <main>
             <h1>About me</h1>
             <section>
@@ -78,8 +74,6 @@ const textCase = "capitalize";
 Aliquam sodales, nisl ac vestibulum laoreet, justo lorem pharetra nunc, at facilisis risus tortor vel purus. Vestibulum volutpat dolor at tellus blandit congue. Aliquam libero ligula, mattis ac pulvinar eu, auctor a erat. Donec non tristique mauris. Nulla eget mollis metus. Vivamus euismod dapibus magna, non dapibus nisl dictum ut. Nullam maximus eros ut justo egestas, quis dignissim risus rutrum. Ut laoreet nunc accumsan dui bibendum, id rhoncus tellus dignissim. Ut quis nunc vel velit commodo commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida dui augue, nec rhoncus libero dignissim vitae. Duis vitae sodales ipsum. Duis ullamcorper neque eget varius iaculis. Proin id posuere nisl, sed auctor sem. Quisque ultricies neque magna, non pellentesque erat placerat vitae. In condimentum vitae lorem et fermentum.</p>
             </section>
         </main>
-        <footer>
-
-        </footer>
+        <Footer></Footer>
     </body>
 </html>

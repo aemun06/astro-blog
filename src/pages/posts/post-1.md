@@ -11,6 +11,8 @@ author: ''
 
 ## First post on this blog
 
-I wrote a post!
+I wrote a post.
+
+I can't do this.... yet!
 
 Cannot make the CSS styling to reach here yet T-T
